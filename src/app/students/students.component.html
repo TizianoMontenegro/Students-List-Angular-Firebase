@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <table class="table">
+      <caption>Estudiantes</caption>
+    
+      <thead>
+        <tr>
+          <th>N°</th>
+          <th>Nombre</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status">
+          <th>{{ i + 1 }}</th>
+    
+          <td>{{ student.name }}</td>
+    
+          <td>
+            <span *ngSwitchCase="'aprobado'" style="color: #0f0; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
+            <span *ngSwitchCase="'desaprobado'" style="color: #f00; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
+            <span *ngSwitchCase="'intensificación'" style="color: #fd0; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
+          </td>
+    
+        </tr>
+      </tbody>
+  </table>
+
+  <div class="addStudent">
+
+    <label for="name">Nombre y apellido</label>
+    <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
+    <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
+
+    <label for="select">Estado</label>
+    <select [(ngModel)]="formAddStatus" id="select">
+      <option value="aprobado">aprobado</option>
+      <option value="intensificación">intensificación</option>
+      <option value="desaprobado">desaprobado</option>
+    </select>
+    <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
+
+    <button (click)="addNewStudent()">Agregar estudiante</button>
+
+  </div>
+</div>

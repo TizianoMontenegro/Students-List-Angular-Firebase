@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table caption{
+    font-size: 1.5em;
+}
+.table tr,
+.table th,
+.table td{    
+    border: 1px solid #000;
+}
+.table th,
+.table td{
+    padding: .7em;
+}
+.table thead th:nth-child(1){
+    width: 10%;
+}
+.table thead th:nth-child(2){
+    width: 45%;
+}
+.table thead th:nth-child(3){
+    width: 45%;
+}
+.table thead{
+    position: sticky;
+    top: 0;
+}
