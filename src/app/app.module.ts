@@ -11,15 +11,18 @@ import { StudentsComponent } from './students/students.component';
 
 // Services
 import { StudentsService } from './students.service';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 const appRoutes: Routes = [
-  {path: "", component: StudentsComponent}
+  {path: "", component: StudentsComponent},
+  {path: "add-student", component: AddStudentComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,

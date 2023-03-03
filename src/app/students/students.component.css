@@ -30,4 +30,8 @@
 .table thead{
     position: sticky;
     top: 0;
+    background-color: #0005;
+}
+.table tr:hover{
+    background-color: antiquewhite;
 }

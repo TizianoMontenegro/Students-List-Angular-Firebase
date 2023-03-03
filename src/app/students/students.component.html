@@ -1,4 +1,5 @@
 <div class="wrapper">
+  <a routerLink="/add-student">Para gregar estudiantes has click aquí.</a>
   <table class="table">
       <caption>Estudiantes</caption>
     
@@ -11,7 +12,7 @@
       </thead>
     
       <tbody>
-        <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status">
+        <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status" (click)="func(student, i)">
           <th>{{ i + 1 }}</th>
     
           <td>{{ student.name }}</td>
@@ -25,22 +26,4 @@
         </tr>
       </tbody>
   </table>
-
-  <div class="addStudent">
-
-    <label for="name">Nombre y apellido</label>
-    <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
-    <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
-
-    <label for="select">Estado</label>
-    <select [(ngModel)]="formAddStatus" id="select">
-      <option value="aprobado">aprobado</option>
-      <option value="intensificación">intensificación</option>
-      <option value="desaprobado">desaprobado</option>
-    </select>
-    <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
-
-    <button (click)="addNewStudent()">Agregar estudiante</button>
-
-  </div>
 </div>

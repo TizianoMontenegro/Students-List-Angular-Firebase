@@ -8,7 +8,7 @@ export class StudentsService {
         new Student("Tiziano Montenegro", "aprobado"),
         new Student("Santino Montenegro", "aprobado"),
         new Student("Mario Garcia", "intensificación"),
-        new Student("Martín Marley", "desaprobado"),
+        new Student("Bertolo Martín", "desaprobado"),
     ];
 
     addNewStudent(name: string, status: string) {

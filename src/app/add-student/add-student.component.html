@@ -1,0 +1,20 @@
+<button routerLink="/">REGRESAR</button>
+<p>add-student works!</p>
+
+<div class="addStudent">
+
+    <label for="name">Nombre y apellido</label>
+    <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
+    <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
+
+    <label for="select">Estado</label>
+    <select [(ngModel)]="formAddStatus" id="select">
+      <option value="aprobado">aprobado</option>
+      <option value="intensificación">intensificación</option>
+      <option value="desaprobado">desaprobado</option>
+    </select>
+    <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
+
+    <button (click)="addNewStudent()">Agregar estudiante</button>
+
+  </div>
