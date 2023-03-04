@@ -1,7 +1,8 @@
-<button routerLink="/">REGRESAR</button>
-<p>add-student works!</p>
+<div class="wrapper">
+  <button routerLink="/">REGRESAR</button>
+  <p>add-student works!</p>
 
-<div class="addStudent">
+  <div class="form">
 
     <label for="name">Nombre y apellido</label>
     <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
@@ -18,3 +19,5 @@
     <button (click)="addNewStudent()">Agregar estudiante</button>
 
   </div>
+
+</div>

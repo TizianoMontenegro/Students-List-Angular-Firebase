@@ -8,21 +8,24 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 // Services
 import { StudentsService } from './students.service';
-import { AddStudentComponent } from './add-student/add-student.component';
 
 const appRoutes: Routes = [
   {path: "", component: StudentsComponent},
-  {path: "add-student", component: AddStudentComponent}
+  {path: "add-student", component: AddStudentComponent},
+  {path: "edit-student/:id", component: EditStudentComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

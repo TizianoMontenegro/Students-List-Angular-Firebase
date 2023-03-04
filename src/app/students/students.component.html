@@ -12,15 +12,15 @@
       </thead>
     
       <tbody>
-        <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status" (click)="func(student, i)">
+        <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status" [routerLink]="['/edit-student',i]">
           <th>{{ i + 1 }}</th>
     
           <td>{{ student.name }}</td>
     
           <td>
-            <span *ngSwitchCase="'aprobado'" style="color: #0f0; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
-            <span *ngSwitchCase="'desaprobado'" style="color: #f00; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
-            <span *ngSwitchCase="'intensificación'" style="color: #fd0; background-color: #111; padding: 3px 10px; border-radius: 20px;">{{ student.status }}</span>
+            <span class="tr-student" *ngSwitchCase="'aprobado'" style="color: #0f0;">{{ student.status }}</span>
+            <span class="tr-student" *ngSwitchCase="'desaprobado'" style="color: #f00;">{{ student.status }}</span>
+            <span class="tr-student" *ngSwitchCase="'intensificación'" style="color: #fd0;">{{ student.status }}</span>
           </td>
     
         </tr>

@@ -15,7 +15,4 @@ export class StudentsComponent implements OnInit{
   ngOnInit():void {
     this.students = this.studentsService.students;
   }
-  func(student: Student, id: number) {
-    alert(id + " " + student.name + " " + student.status)
-  }
 }

@@ -15,4 +15,13 @@ export class StudentsService {
         let newStudent = new Student(name, status);
         this.students.push(newStudent);
     }
+
+    modifyStudent(name: string, status: string, id: number) {
+        let studentModified = new Student(name, status);
+        this.students.splice(id,1,studentModified);
+    }
+
+    searchStudent(id: number) {
+        return this.students[id]
+    }
 }

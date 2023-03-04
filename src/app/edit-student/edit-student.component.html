@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <button routerLink="/">REGRESAR</button>
+    <p>edit-student works!</p>
+
+    <div class="form">
+
+        <label for="name">Nombre y apellido</label>
+        <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
+        <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
+
+        <label for="select">Estado</label>
+        <select [(ngModel)]="formAddStatus" id="select">
+        <option value="aprobado">aprobado</option>
+        <option value="intensificación">intensificación</option>
+        <option value="desaprobado">desaprobado</option>
+        </select>
+        <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
+
+        <button (click)="editStudent()">Modificar estudiante</button>
+
+    </div>
+
+</div>
