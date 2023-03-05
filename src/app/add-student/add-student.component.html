@@ -1,12 +1,14 @@
 <div class="wrapper">
-  <button routerLink="/">REGRESAR</button>
-  <p>add-student works!</p>
+
+  <button class="come-back" routerLink="/">REGRESAR</button>
+
+  <h1>Agrega un estudiante!</h1>
 
   <div class="form">
 
     <label for="name">Nombre y apellido</label>
-    <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
-    <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
+    <input [(ngModel)]="formAddName" id="name" type="text">
+    <p class="error" *ngIf="errorFormAddName" style="color: #f11">{{ errorFormAddName }}</p>
 
     <label for="select">Estado</label>
     <select [(ngModel)]="formAddStatus" id="select">
@@ -14,7 +16,7 @@
       <option value="intensificación">intensificación</option>
       <option value="desaprobado">desaprobado</option>
     </select>
-    <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
+    <p class="error" *ngIf="errorFormAddStatus" style="color: #f11">{{ errorFormAddStatus }}</p>
 
     <button (click)="addNewStudent()">Agregar estudiante</button>
 

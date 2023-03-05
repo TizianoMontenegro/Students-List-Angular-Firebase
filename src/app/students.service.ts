@@ -4,6 +4,7 @@ import { Student } from "./configuration";
 @Injectable()
 
 export class StudentsService {
+
     students: Student[] = [
         new Student("Tiziano Montenegro", "aprobado"),
         new Student("Santino Montenegro", "aprobado"),
@@ -22,6 +23,11 @@ export class StudentsService {
     }
 
     searchStudent(id: number) {
-        return this.students[id]
+        return this.students[id];
     }
+
+    removeStudent(id: number) {
+        this.students.splice(id,1);
+    }
+
 }

@@ -27,30 +27,34 @@ export class EditStudentComponent implements OnInit {
       this.formAddStatus = studentSelected.status;
     }
 
-  editStudent() {
-    let validName: number = 0;
-    let validStatus: number = 0;
-    if(this.formAddName == "") {
-      validName = 0;
-      this.errorFormAddName = "el campo es inválido"
-    }else{
-      this.errorFormAddName = "";
-      validName = 1;
-    }
-    if(this.formAddStatus == "") {
-      validStatus = 0;
-      this.errorFormAddStatus = "el campo esta vacío";
-    }else{
-      this.errorFormAddStatus = "";
-      validStatus = 1;
+    editStudent() {
+      let validName: number = 0;
+      let validStatus: number = 0;
+      if(this.formAddName == "") {
+        validName = 0;
+        this.errorFormAddName = "el campo es inválido"
+      }else{
+        this.errorFormAddName = "";
+        validName = 1;
+      }
+      if(this.formAddStatus == "") {
+        validStatus = 0;
+        this.errorFormAddStatus = "el campo esta vacío";
+      }else{
+        this.errorFormAddStatus = "";
+        validStatus = 1;
+      }
+
+      if(validName === 1 && validStatus === 1) {
+        this.studentsService.modifyStudent(this.formAddName, this.formAddStatus, this.index);
+        this.formAddName = "";
+        this.formAddStatus = "";
+        this.router.navigate(["/"]);
+      }
     }
 
-    if(validName === 1 && validStatus === 1) {
-      this.studentsService.modifyStudent(this.formAddName, this.formAddStatus, this.index);
-      this.formAddName = "";
-      this.formAddStatus = "";
+    removeStudent() {
+      this.studentsService.removeStudent(this.index);
       this.router.navigate(["/"]);
     }
-  }
-
 }

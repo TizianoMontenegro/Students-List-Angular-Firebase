@@ -1,22 +1,36 @@
 <div class="wrapper">
-    <button routerLink="/">REGRESAR</button>
-    <p>edit-student works!</p>
+
+    <button class="come-back" routerLink="/">REGRESAR</button>
+
+    <h1>Modifica un estudiante!</h1>
 
     <div class="form">
 
         <label for="name">Nombre y apellido</label>
-        <input [(ngModel)]="formAddName" id="name" type="text" placeholder="Nombre del estudiante">
-        <p *ngIf="errorFormAddName">{{ errorFormAddName }}</p>
+        <input [(ngModel)]="formAddName" id="name" type="text">
+        <p class="error" *ngIf="errorFormAddName" style="color: #f11">{{ errorFormAddName }}</p>
 
         <label for="select">Estado</label>
         <select [(ngModel)]="formAddStatus" id="select">
-        <option value="aprobado">aprobado</option>
-        <option value="intensificación">intensificación</option>
-        <option value="desaprobado">desaprobado</option>
+            <option value="aprobado">aprobado</option>
+            <option value="intensificación">intensificación</option>
+            <option value="desaprobado">desaprobado</option>
         </select>
-        <p *ngIf="errorFormAddStatus">{{ errorFormAddStatus }}</p>
+        <p class="error" *ngIf="errorFormAddStatus" style="color: #f11">{{ errorFormAddStatus }}</p>
 
-        <button (click)="editStudent()">Modificar estudiante</button>
+        <button (click)="editStudent()">Agregar estudiante</button>
+
+    </div>
+    
+    <br><br>
+
+    <h1>Elemina un estudiante!</h1>
+
+    <div class="form">
+
+        <button (click)="removeStudent()">Eliminar estudiante</button>
+
+        <p>Si da click en el botón "Eliminar estudiante" se eleminara a el estudiante {{ formAddName }} de la tabla/lista.</p>
 
     </div>
 

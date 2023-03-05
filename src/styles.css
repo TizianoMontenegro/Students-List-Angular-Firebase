@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-    --background-color: #5f5;
+    --color1: #222831;
+    --color2: #393E46;
+    --color3: #00ADB5;
+    --color4: #EEEEEE;
 }
 *{
     box-sizing: border-box;
