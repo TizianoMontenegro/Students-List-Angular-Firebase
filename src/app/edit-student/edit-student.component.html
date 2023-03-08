@@ -1,17 +1,17 @@
 <div class="wrapper">
 
-    <button class="come-back" routerLink="/">REGRESAR</button>
+    <app-button routerLink="/"></app-button>
 
     <h1>Modifica un estudiante!</h1>
 
     <div class="form">
 
-        <label for="name">Nombre y apellido</label>
-        <input [(ngModel)]="formAddName" id="name" type="text">
+        <label>Nombre y apellido</label>
+        <input [(ngModel)]="formAddName" type="text">
         <p class="error" *ngIf="errorFormAddName" style="color: #f11">{{ errorFormAddName }}</p>
 
-        <label for="select">Estado</label>
-        <select [(ngModel)]="formAddStatus" id="select">
+        <label>Estado</label>
+        <select [(ngModel)]="formAddStatus">
             <option value="aprobado">aprobado</option>
             <option value="intensificación">intensificación</option>
             <option value="desaprobado">desaprobado</option>

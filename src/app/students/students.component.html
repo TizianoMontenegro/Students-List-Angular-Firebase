@@ -1,6 +1,16 @@
 <div class="wrapper">
-  <a class="link" routerLink="/add-student">Para gregar estudiantes has click aquí.</a>
+
+
+  <nav class="nav">
+
+    <app-button [content]="'AGREGAR USUARIO'" routerLink="/add-student"></app-button>
+
+    <app-button [content]="'AYUDA'" routerLink="/add-student"></app-button>
+
+  </nav>
+
   <table class="table">
+
       <caption>Estudiantes</caption>
     
       <thead>
@@ -25,5 +35,8 @@
     
         </tr>
       </tbody>
+
   </table>
+
 </div>
+

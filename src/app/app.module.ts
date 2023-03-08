@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 
 // Services
 import { StudentsService } from './students.service';
+import { ButtonComponent } from './button/button.component';
+import { HttpService } from './http.service';
 
 const appRoutes: Routes = [
   {path: "", component: StudentsComponent},
@@ -25,15 +28,20 @@ const appRoutes: Routes = [
     AppComponent,
     StudentsComponent,
     AddStudentComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [StudentsService],
+  providers: [
+    StudentsService,
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
