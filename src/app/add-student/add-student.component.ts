@@ -40,7 +40,7 @@ export class AddStudentComponent {
       this.studentsService.addNewStudent(this.formAddName, this.formAddStatus);
       this.formAddName = "";
       this.formAddStatus = "";
-      this.router.navigate(["/"]);
+      setTimeout(()=>{this.router.navigate(["/"])},400);
     }
   }
 }

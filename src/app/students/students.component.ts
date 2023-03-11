@@ -22,4 +22,8 @@ export class StudentsComponent implements OnInit{
     })
   }
 
+  help() {
+    const helpWindow = document.getElementById("help-window");
+    helpWindow?.classList.toggle("translate")
+  }
 }

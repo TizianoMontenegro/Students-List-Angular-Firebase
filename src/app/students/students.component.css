@@ -60,3 +60,28 @@
     padding: 3px 10px; 
     border-radius: 20px;
 }
+
+.wrapper .help-window{
+    background-color: var(--color2);
+    max-width: 300px;
+    width: 100%;
+    padding: .4em 1em;
+    position: absolute;
+    top: 25px;
+    left: 100%;
+    transition: all .3s ease-in-out;
+}
+.wrapper .help-window h1{
+}
+.wrapper .help-window ul{
+    padding-left: 17px;
+}
+.wrapper .help-window ul li{
+    padding-bottom: 2em;
+}
+.wrapper .help-window ul li:last-child{
+    padding-bottom: 0;
+}
+.wrapper .help-window.translate{
+    transform: translateX(-100%);
+}

@@ -49,12 +49,12 @@ export class EditStudentComponent implements OnInit {
         this.studentsService.modifyStudent(this.formAddName, this.formAddStatus, this.index);
         this.formAddName = "";
         this.formAddStatus = "";
-        this.router.navigate(["/"]);
+        setTimeout(()=>{this.router.navigate(["/"])},400);
       }
     }
 
     removeStudent() {
       this.studentsService.removeStudent(this.index);
-      this.router.navigate(["/"]);
+      setTimeout(()=>{this.router.navigate(["/"])},600);
     }
 }

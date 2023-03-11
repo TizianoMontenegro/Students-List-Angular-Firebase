@@ -15,10 +15,11 @@ export class StudentsService {
 
     constructor(private httpService: HttpService){}
 
-    async addNewStudent(name: string, status: string) {
+    addNewStudent(name: string, status: string) {
         let newStudent = new Student(name, status);
-        await this.students.push(newStudent);
-        await this.httpService.addStudent(this.students)
+        this.students.push(newStudent);
+        this.httpService.saveStudents(this.students);
+        // alert(`El estudiente ${name} ha sido agregado correctamente.`)
     }
 
     modifyStudent(name: string, status: string, id: number) {
@@ -33,7 +34,9 @@ export class StudentsService {
 
     removeStudent(id: number) {
         // this.students.splice(id,1);
+        this.students.splice(id, 1)
         this.httpService.removeStudent(id);
+        this.httpService.saveStudents(this.students);
     }
 
     getStudents() {

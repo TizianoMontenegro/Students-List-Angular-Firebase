@@ -12,8 +12,8 @@ export class HttpService {
     return this.httpClient.get("https://app-students-a1237-default-rtdb.firebaseio.com/students.json");
   }
 
-  addStudent(student: Student[]) {
-    this.httpClient.put("https://app-students-a1237-default-rtdb.firebaseio.com/students.json", student).subscribe(
+  saveStudents(students: Student[]) {
+    this.httpClient.put("https://app-students-a1237-default-rtdb.firebaseio.com/students.json", students).subscribe(
       response => console.log("Response -> ", response),
       error => console.log("Error -> ",error)
     )

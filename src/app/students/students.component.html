@@ -3,9 +3,9 @@
 
   <nav class="nav">
 
-    <app-button [content]="'AGREGAR USUARIO'" routerLink="/add-student"></app-button>
+    <app-button [content]="'AGREGAR ESTUDIANTE'" routerLink="/add-student"></app-button>
 
-    <app-button [content]="'AYUDA'" routerLink="/add-student"></app-button>
+    <app-button [content]="'AYUDA'" (click)="help()"></app-button>
 
   </nav>
 
@@ -37,6 +37,15 @@
       </tbody>
 
   </table>
+
+  <div id="help-window" class="help-window">
+    <h1>Como usar?</h1>
+    <ul>
+      <li>Si haces click en el link de "AGREGAR ESTUDIANTE" puedes agregar un estudiante.</li>
+      <li>Si haces click en algún estudiante puedes modificar u/o eliminar al estudiante.</li>
+      <li>Para cerrar esta ventana has click de nuevo en el botón de "AYUDA".</li>
+    </ul>
+  </div>
 
 </div>
 
